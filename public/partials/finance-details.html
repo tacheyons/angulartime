@@ -1,0 +1,22 @@
+<div class="Market panel panel-primary">
+    <div class="panel-heading"> {{date | date:'dd-MM-yyyy'}} - {{marketResults.Symbol}} - High: {{marketResults.High}} Low: {{marketResults.Low}}</div>
+    <div class="panel-body">
+        <div>
+            <p class="lead">
+             {{marketResults.Name}}
+            </p>
+              <p>
+                LastPrice :{{marketResults.LastPrice}}&nbsp;&#126;&nbsp;
+                Change: {{marketResults.Change}}&#176;C&nbsp;&#126;&nbsp;
+                ChangePercent: {{marketResults.ChangePercent}}&#176;
+            </p>
+    </div>
+
+</div>
+
+ <div class="panel-footer">
+        <small>
+            Day: {{marketResults.Timestamp}}
+        </small>
+    </div>
+</div>

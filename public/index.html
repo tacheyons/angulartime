@@ -1,0 +1,123 @@
+<!DOCTYPE html>   
+<html lang="en" ng-app="MyApp">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <style>
+        .navbar { border-radius:0; }
+
+       
+
+        #map_canvas {
+          
+             height: 100% !important;
+             
+        }
+
+        .angular-google-map-container {
+            position: absolute;
+            top: 250px;
+            bottom: 100px;
+            right: 100px;
+            left: 500px;
+            width:450px;
+            height:500px;
+        }
+
+        #custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+    </style>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.js"  ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-resource.js"></script>
+    <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+    <script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script>
+    <script data-require="ui-router-extras@0.0.13" data-semver="0.0.13" src="https://rawgit.com/christopherthielen/ui-router-extras/0.0.13/release/ct-ui-router-extras.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.4.1/angular-messages.js"></script>
+    <script src="moment.js"></script>
+
+  
+  
+     
+            <script src="app.js"></script>
+      <script src="js/weather/weather.js"></script>
+    <script src="js/weather/stateController.js"></script>
+   <script src="js/weather/openweathermapService.js"></script>
+  <script src="js/weather/weatherPanelDirective.js"></script>
+ 
+  <script src="js/finance/finance.js"></script>
+  <script src="js/utility/financeApi.js"></script>
+   <script src="js/finance/yahooService.js"></script>
+  <script src="js/finance/yahooController.js"></script>
+    <script src="http://rawgit.com/angular-ui/angular-google-maps/2.0.X/dist/angular-google-maps.js"></script>
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+   
+  </head>
+
+  <body >
+
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="about" >About</a></li>
+        <li><a ui-sref="finance" >Finance</a></li>
+
+    </ul>
+</nav>
+
+
+ 
+   <div class="container">
+
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view></div>
+    <div ui-view>{{test}}</div>
+
+</div>
+  
+     
+   </br>
+
+  </body>
+ 

@@ -1,0 +1,15 @@
+{
+    "entries":[{
+	"name": "Peter",
+	"age": 25,
+	"id": 1
+}, {
+	"name": "Stefan",
+	"age": 35,
+	"id": 2
+}, {
+	"name": "Agnes",
+	"age": 22,
+	"id": 3
+}] 
+}

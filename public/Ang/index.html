@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+    <script data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular.js" data-require="angular.js@1.2.x"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-resource.js"></script>
+    <link data-require="bootstrap-css@2.3.2" data-semver="2.3.2" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+    <script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script>
+    <script data-require="ui-router-extras@0.0.13" data-semver="0.0.13" src="https://rawgit.com/christopherthielen/ui-router-extras/0.0.13/release/ct-ui-router-extras.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.3/angular-messages.js"></script>
+    <script src="moment.js"></script>
+     
+    <script src="js/app.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="about" >About</a></li>
+        <li><a ui-sref="register" >Register</a></li>
+    </ul>
+</nav>
+
+
+ 
+   <div class="container">
+
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view></div>
+
+</div>
+  
+     <ng-view></ng-view>
+   </br>
+
+  </body>
+ 

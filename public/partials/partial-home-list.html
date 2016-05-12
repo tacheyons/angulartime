@@ -1,0 +1,16 @@
+<div class="panel panel-primary">
+
+<div class="panel-heading"> List View </div>
+
+<div class="panel-body">
+ <h1>Todos</h1>
+    <h4>{{todos.length}} remain</h4>
+    <ul>
+      <li ng-repeat="todo in filteredTodos">{{todo.text}}</li>
+    </ul>
+    <div data-pagination="" data-num-pages="numPages()" 
+      data-current-page="currentPage" data-max-size="maxSize"  
+      data-boundary-links="true"></div>
+</div>
+
+</div>

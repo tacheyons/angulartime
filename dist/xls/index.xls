@@ -1,0 +1,2 @@
+public/index.html,ui-view
+public/index.html,ui-view>{{test}}</div

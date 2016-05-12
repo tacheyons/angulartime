@@ -1,0 +1,35 @@
+<div ng-controller="yahooController">
+    <h2>Stock prices for: {{symbol}}</h2>
+    <label for="symbol">Stock symbol:</label>
+    <input name="symbol" type="text" ng-model="symbol" ng-change="getData()">
+    <label for="start">Start date:</label>
+    <input name="start" type="text" ng-model="startDate" ng-change="getData()">
+    <label for="end">End date:</label>
+    <input name="end" type="text" ng-model="endDate" ng-change="getData()">
+    <label for="method">Lookup method</label>
+    <select ng-model="method" ng-options="o.value for o in options"></select>
+    
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th>Date</th>
+            <th>Open</th>
+            <th>Close</th>
+            <th>Symbol</th>
+        </thead>
+        <tbody>
+            <tr ng-show='method.value === "watch"' ng-repeat="item in items.list">
+                <td>{{item.Date}}</td>
+                <td>{{item.Open}}</td>
+                <td>{{item.Close}}</td>
+                 <td>{{item.Symbol}}</td>
+            </tr>
+            <tr ng-hide='method.value === "watch"' ng-repeat="item in items">
+                <td>{{item.Date}}</td>
+                <td>{{item.Open}}</td>
+                <td>{{item.Close}}</td>
+                 <td>{{item.Symbol}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
