@@ -128,4 +128,54 @@ financeApp.factory('service', function($q, $http) {
                 }
             }
         };
+        
+			var linkFunc = function ($scope, element, attr) 
+			{
+		 		
+		 		$scope.fileLoadListener = $scope.fileLoadListener();
+		 		$scope.fileLoadErrorListener = $scope.fileLoadErrorListener();
+		 		$scope.onFailure = 
+		 		element.on('click',function(event)
+		 		{
+		 			element[0].value = null;
+		 		});
+		 
+		 		element.on('change', function (event) {
+		 	
+		 		
+		 		 var file = element[0].files[0];
+		 		 if(angular.isDefined(file))
+			      {   var fileType = $scope.fileFormat||'csv';
+	                  var isSuccess = false;
+	                  var extension = file.name.split('.').pop().toLowerCase();
+	                  isSuccess = fileType.indexOf(extension) > -1; 
+			 		  if(isSuccess)
+			 		  {   
+			 		 	$scope.fileLoadListener(file);
+			 		  }
+			 		  else
+			 		 {
+			 		 	var error={};
+			 		 	error.message="Import trade file should be in " + fileType.toUpperCase() + " format";
+			 		 	$scope.fileLoadErrorListener(error);
+			 		 }
+		 		 }
+		 			 	
+			 });
+			 
+			 element.on('focus',function(event)
+			 {
+			 	
+			 }
+			 );
+		};
+	
+		return {
+		link:linkFunc,
+		scope:{ fileLoadListener:'&nxnOnFileLoad',
+		  fileFormat:'@nxnFileFormat',
+		  fileLoadErrorListener:'&nxnOnFileLoadError'
+		  
+		} 
+	
         */
