@@ -61,3 +61,71 @@ financeApp.factory('service', function($q, $http) {
 
     };
 });
+
+/*
+
+  link: function($scope, element, attr, numberCtrl) {
+
+                numberCtrl.$parsers.push(function (inputValue) {
+
+                    if (angular.isUndefined(inputValue)) {
+                        return '';
+                    }
+                    var notAllowedFields = /[^0-9m\.]+/g;    //characters other than 0 to 9 and m.
+                    var numberField = inputValue.replace(notAllowedFields, '');
+                    if (numberField !== inputValue) {
+                        numberCtrl.$setViewValue(numberField);
+                        numberCtrl.$render();
+                    }
+                    return numberField;
+                });
+
+                element.on('focusout',  function(event) {
+
+                    var exp1 = /^[0-9]+m{2}$/;     //start with number and ends with mm.
+                    var exp2 = /^[0-9]+\.[0-9]+$/;  //start with number, decimal and ends with number.
+                    var exp3 = /^[0-9]+\.[0-9]+m{2}$/; //start with number, decimal and ends with mm.
+                    var exp4 = /^[0-9]+$/;  //start with number and only numbers
+
+                    var inputValue = element.val();
+
+                    if(exp1.test(inputValue) || exp2.test(inputValue) || exp3.test(inputValue) || exp4.test(inputValue))
+                    {
+                        var filteredData = '';
+                        if((/mm$/).test(inputValue))
+                        {
+                            var decimalNo = inputValue.substring(0, inputValue.length - 2);
+                            decimalNo = parseFloat(decimalNo) * 1000000;
+                            $scope.modal = decimalNo.toFixed(2);
+                            filteredData = formatNumber($scope.modal);
+                            $scope.modal = filteredData;
+                            return element.val(filteredData);
+                        }
+                        else
+                        {
+                            $scope.modal = parseFloat(inputValue).toFixed(2);
+                            filteredData = formatNumber($scope.modal);
+                            $scope.modal = filteredData;
+                            return element.val(filteredData);
+                        }
+                    }
+                    else{
+                        return element.val();
+                    }
+                });
+
+                function formatNumber(num)
+                {
+                    num += '';
+                    var x = num.split('.');
+                    var x1 = x[0];
+                    var x2 = x.length > 1 ? '.' + x[1] : '';
+                    var rgx = /(\d+)(\d{3})/;
+                    while (rgx.test(x1)) {
+                        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                    }
+                    return x1 + x2;
+                }
+            }
+        };
+        */
